@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo Encontre a Fruta Diferente</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🍎 Encontre a Fruta Diferente</h1>
+      <p class="subtitle">Um jogo divertido feito para crianças.</p>
+    </header>
+
+    <div id="start-screen" class="screen">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #4ECDC4;">Como jogar?</h2>
+      
+      <div style="text-align: left; max-width: 520px; margin: 0 auto 30px; line-height: 1.7;">
+        <p style="margin-bottom: 12px;">Toque na fruta que está <strong>diferente</strong> das outras.</p>
+        <p style="margin-bottom: 12px;">Você tem <strong>60 segundos</strong> para fazer o maior número de pontos possível.</p>
+        <p style="margin-bottom: 12px;">Faça acertos seguidos para ativar o <strong>combo</strong> e ganhar mais pontos.</p>
+        <p>Quanto mais rápido você for, mais desafiante fica.</p>
+      </div>
+
+      <button id="btn-jogar" class="btn">JOGAR AGORA</button>
+      
+    </div>
+
+    <div id="game-screen" class="screen">
+      <div class="hud">
+        <div class="hud-item">
+          <span>TEMPO</span>
+          <div id="timer-value" class="value">60</div>
+        </div>
+        
+        <div class="hud-item">
+          <span>PONTOS</span>
+          <div id="score-value" class="value">0</div>
+        </div>
+        
+        <div class="hud-item">
+          <span>COMBO</span>
+          <div id="multiplier-value" class="value">1x</div>
+        </div>
+      </div>
+
+      <p id="status" class="status">Toque na fruta que está diferente.</p>
+
+      <!-- Grade 4x4 -->
+      <div id="grid"></div>
+
+      <p style="font-size: 0.9rem; color: #999; margin-top: 10px;">
+        Toque na fruta diferente - Erros não tiram pontos,só resetam o combo.
+      </p>
+    </div>
+
+    <div id="end-screen" class="screen">
+      <h2> Fim de Jogo</h2>
+      
+      <p style="font-size: 1.3rem; margin-bottom: 5px;">Sua pontuação final:</p>
+      <div id="final-score" class="final-score">0</div>
+      <div class="input-group">
+        <label for="player-name">Digite seu nome para salvar no ranking:</label>
+        <input type="text" id="player-name" placeholder="Seu nome" maxlength="20">
+      </div>
+
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <button id="btn-salvar" class="btn btn-secondary">Salvar no Ranking</button>
+        <button id="btn-novo-jogo" class="btn">Jogar Novamente</button>
+      </div>
+
+      <div class="ranking">
+        <h3>Melhores Jogadores</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nome</th>
+              <th>Pontos</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody id="ranking-body">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
